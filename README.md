@@ -2,7 +2,8 @@
 Ce repos presente les démarches et bonnes pratiques d'installation et configuration de ISPConfig avec Wazuh
 
 # Tâches
-1. Installer & Configurer ISPConfig sur le serveur 1
+
+**1. Installer & Configurer ISPConfig sur le serveur 1**
 
 ● Installer ISPConfig en suivant les meilleures pratiques.
 
@@ -12,7 +13,7 @@ Ce repos presente les démarches et bonnes pratiques d'installation et configura
 
 ● Déployer un site wordpress sur le nom de domaine
 
-2. Installer et Configurer Wazuh sur le serveur 2
+**2. Installer et Configurer Wazuh sur le serveur 2**
 
 ● Installer Wazuh conformément aux bonnes pratiques de déploiement de sécurité
 

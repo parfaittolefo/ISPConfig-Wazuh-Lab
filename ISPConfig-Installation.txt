@@ -1,7 +1,0 @@
-Tout le travail ici se fera sur le server 1, un server ubuntu
-
-- Mettons à jour le système:
-
-`sudo apt-get update && sudo apt-get upgrade`
-
-Dans la suite du travail, nous aurons besoin d'un nom de domaine, nous allons faisons donc une reservation de nom de domaine sur https://www.freenom.com/fr/index.html
