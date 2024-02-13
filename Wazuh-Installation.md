@@ -216,6 +216,7 @@ Very good, everything is well !!!
     systemctl enable wazuh-dashboard
     systemctl start wazuh-dashboard
 
+![Wazuh-dashboard](image-11.png)
 
 
 Réfférence: [documentation wazuh](https://documentation.wazuh.com/current/installation-guide/wazuh-server/step-by-step.html)
