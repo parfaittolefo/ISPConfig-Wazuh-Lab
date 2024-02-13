@@ -44,16 +44,17 @@ _Bravo, nous venons d'installer ISPConfig avec succés_
 
 ![alt text](image-1.png)
 
- _ISPConfig admin password is:_ t5JmG8ewm6DqPUF
+ _ISPConfig admin password is:_ 
+    t5JmG8ewm6DqPUF
 
- _MySQL root password is:_ DshWXBXZpxMULVq939qn
+ _MySQL root password is:_ 
+    DshWXBXZpxMULVq939qn
 
 On peut accéder à l'interface web de IPSConfig sur le port 8080 ==> https://parfait-srv-test-1.cyberspector.xyz:8080/
 
 ![alt text](image-2.png)
 
-**Étape 4: Mettre en pratiques les bonnes pratique de securité sur IPSConfig**
-
+c
 - Changeons le mot de passe prcédent dans `tools`
 
 Le nouveau mot de passe est: 
@@ -70,5 +71,27 @@ _Prenez le soin de ne listez que les ports néccéssaire pour etre ouvert_
 
 
 
+**Étape 3: ** 
+
+- Création d'un Client
+
+    ![Création de client](image-13.png)
+
+_Password_
+
+    MB!49ean
+
+
+- Ajout d'un domaine web
+
+![Ajout de doamine](image-14.png)
+
+
+
+
+
+
 
 Réfférence: [hetzner community](https://community.hetzner.com/tutorials/how-to-install-ispconfig-on-ubuntu-20-04-lts)
+
+

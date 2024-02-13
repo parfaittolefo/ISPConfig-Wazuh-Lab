@@ -223,6 +223,11 @@ Very good, everything is well !!!
 
 ![Wazuh-dashboard](image-11.png)
 
+
+![Wazuh-dashboard UI](image-12.png)
+
+Bingo !!!
+
 - Sécurisons   Wazuh
 
 _Changeons le mot de passe_
@@ -244,8 +249,46 @@ _Output_
     13/02/2024 14:03:01 INFO: Updated wazuh-wui user password in wazuh dashboard. Remember to restart the service.
 
 
-
-
-
 Réfférence: [documentation wazuh](https://documentation.wazuh.com/current/installation-guide/wazuh-server/step-by-step.html)
 
+
+**La presente section est dédié à l'integration de wazuh a monitorer le serveur 1**
+
+**Retour sur le serveur 1**
+
+- Ajouter le référentiel Wazuh
+
+    curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
+
+
+    echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
+
+
+    apt-get update
+
+
+- Déployer un agent Wazuh
+
+    WAZUH_MANAGER="parfait-srv-test-1.cyberspector.xyz" apt-get install wazuh-agent
+
+- Activez et démarrez le service d'agent Wazuh.
+
+    systemctl daemon-reload
+    systemctl enable wazuh-agent
+    systemctl start wazuh-agent
+
+- Verifions le statut
+
+    systemctl status wazuh-agent
+
+![Wazuh agnet status](image-15.png)
+
+
+- Action recommandée : Désactiver les mises à jour Wazuh
+
+    sed -i "s/^deb/#deb/" /etc/apt/sources.list.d/wazuh.list
+    apt-get update
+
+    echo "wazuh-agent hold" | dpkg --set-selections
+
+WAZUH_MANAGER="parfait-srv-test-2.cyberspector.xyz" apt-get install wazuh-agent
