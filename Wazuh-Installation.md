@@ -269,7 +269,7 @@ Réfférence: [documentation wazuh](https://documentation.wazuh.com/current/inst
 
 - Déployer un agent Wazuh
 
-    WAZUH_MANAGER="parfait-srv-test-1.cyberspector.xyz" apt-get install wazuh-agent
+    WAZUH_MANAGER="parfait-srv-test-2.cyberspector.xyz" WAZUH_MANAGER_PORT='1514' apt-get install wazuh-agent
 
 - Activez et démarrez le service d'agent Wazuh.
 
@@ -284,6 +284,9 @@ Réfférence: [documentation wazuh](https://documentation.wazuh.com/current/inst
 ![Wazuh agnet status](image-15.png)
 
 
+![Wazuh agant](image-16.png)
+
+
 - Action recommandée : Désactiver les mises à jour Wazuh
 
     sed -i "s/^deb/#deb/" /etc/apt/sources.list.d/wazuh.list
@@ -291,4 +294,3 @@ Réfférence: [documentation wazuh](https://documentation.wazuh.com/current/inst
 
     echo "wazuh-agent hold" | dpkg --set-selections
 
-WAZUH_MANAGER="parfait-srv-test-2.cyberspector.xyz" apt-get install wazuh-agent
