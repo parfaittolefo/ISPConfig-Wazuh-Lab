@@ -99,8 +99,7 @@ Dans notre car, nous ne changeons rien car l'indexeur sera installer sur le meme
 
 7. Création des certificats
 
-`NODE_NAME=wazuh-1`
-
+    NODE_NAME=wazuh-1
     mkdir /etc/filebeat/certs
     tar -xf ./wazuh-certificates.tar -C /etc/filebeat/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./root-ca.pem
     mv -n /etc/filebeat/certs/$NODE_NAME.pem /etc/filebeat/certs/filebeat.pem
@@ -154,8 +153,7 @@ Dans notre cas, tous les composants sont sur la même machine
 
 - Déploiement de certificats
 
-`NODE_NAME=node-1`
-
+    NODE_NAME=node-1
     mkdir /etc/wazuh-indexer/certs
     tar -xf ./wazuh-certificates.tar -C /etc/wazuh-indexer/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./admin.pem ./admin-key.pem ./root-ca.pem
     mv -n /etc/wazuh-indexer/certs/$NODE_NAME.pem /etc/wazuh-indexer/certs/indexer.pem
@@ -163,6 +161,13 @@ Dans notre cas, tous les composants sont sur la même machine
     chmod 500 /etc/wazuh-indexer/certs
     chmod 400 /etc/wazuh-indexer/certs/*
     chown -R wazuh-indexer:wazuh-indexer /etc/wazuh-indexer/certs
+
+- Starting the service
+
+    systemctl daemon-reload
+    systemctl enable wazuh-indexer
+    systemctl start wazuh-indexer
+    systemctl status wazuh-indexer
 
 - Initialisation du cluster
 `/usr/share/wazuh-indexer/bin/indexer-security-init.sh`
@@ -200,7 +205,6 @@ Very good, everything is well !!!
 - Déploiement de certificats
 
     NODE_NAME=dashboard
-
     mkdir /etc/wazuh-dashboard/certs
     tar -xf ./wazuh-certificates.tar -C /etc/wazuh-dashboard/certs/ ./$NODE_NAME.pem ./$NODE_NAME-key.pem ./root-ca.pem
     mv -n /etc/wazuh-dashboard/certs/$NODE_NAME.pem /etc/wazuh-dashboard/certs/dashboard.pem
@@ -215,11 +219,33 @@ Very good, everything is well !!!
     systemctl daemon-reload
     systemctl enable wazuh-dashboard
     systemctl start wazuh-dashboard
+    systemctl status wazuh-dashboard
 
 ![Wazuh-dashboard](image-11.png)
 
+- Sécurisons   Wazuh
+
+_Changeons le mot de passe_
+
+`/usr/share/wazuh-indexer/plugins/opensearch-security/tools/wazuh-passwords-tool.sh --change-all --admin-user wazuh --admin-password wazuh`
+
+_Output_
+
+    root@wazhur-svr:/home/ubuntu# /usr/share/wazuh-indexer/plugins/opensearch-security/tools/wazuh-passwords-tool.sh --change-all --admin-user wazuh --admin-password wazuh
+    13/02/2024 14:02:57 INFO: The password for user admin is pmxDoyil59F?dZsfo9WdR9ueLiTl?w*T
+    13/02/2024 14:02:57 INFO: The password for user kibanaserver is MbjYEPxEfxS2WxkFD??5NuRpaqnlYIpJ
+    13/02/2024 14:02:57 INFO: The password for user kibanaro is +MSbI8RQ42AuwBJy65GFb6QO7IQARp.i
+    13/02/2024 14:02:57 INFO: The password for user logstash is kHCYAuMqE9w?ggjiPiriX4+h.FYaPWo?
+    13/02/2024 14:02:57 INFO: The password for user readall is wDHRgdfGcGee33D2cys0.z9xm2STM7xg
+    13/02/2024 14:02:57 INFO: The password for user snapshotrestore is kK3hZbx5K7C5xJ++q+SDPfi3I2+7cm4.
+    13/02/2024 14:02:57 WARNING: Wazuh indexer passwords changed. Remember to update the password in the Wazuh dashboard and Filebeat nodes if necessary, and restart the services.
+    13/02/2024 14:03:00 INFO: The password for Wazuh API user wazuh is dnA*.B1UjsEyuySGIwzo016pOE?e50sD
+    13/02/2024 14:03:01 INFO: The password for Wazuh API user wazuh-wui is *3UZgBGXjKV.xuvruYOrP3h2PB24n47z
+    13/02/2024 14:03:01 INFO: Updated wazuh-wui user password in wazuh dashboard. Remember to restart the service.
+
+
+
+
 
 Réfférence: [documentation wazuh](https://documentation.wazuh.com/current/installation-guide/wazuh-server/step-by-step.html)
-
-
 

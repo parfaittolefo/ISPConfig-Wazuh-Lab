@@ -56,7 +56,9 @@ On peut accéder à l'interface web de IPSConfig sur le port 8080 ==> https://pa
 
 - Changeons le mot de passe prcédent dans `tools`
 
-Le nouveau mot de passe est: `S0M0r3@S3cur3d==`
+Le nouveau mot de passe est: 
+    
+    S0M0r3@S3cur3d==
 
 _En production, il faut definir le 2FA !!!_
 
