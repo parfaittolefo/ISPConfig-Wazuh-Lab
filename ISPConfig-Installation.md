@@ -172,6 +172,30 @@ _Password_
     tG9bEqC_
 
 
+- Ajout d'utilisateur  de DB
+
+![Db user added](image-25.png)
+
+    
+    c1dbuser
+
+    FTd39hsb!JJ
+
+- Configuration de la DB
+
+![DB Config](image-22.png)
+
+- Add FTP user
+
+![Ftp user](image-26.png)
+
+    parfaitftpuser
+
+    sY8w2AzCg!
+
+
+
+
 
 
 
