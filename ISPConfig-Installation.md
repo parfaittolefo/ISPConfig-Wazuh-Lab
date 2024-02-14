@@ -42,13 +42,13 @@ Pour ce travail, nous installerons ISPConfig avec Nginx, PHP (7.4 et 8.0), Maria
 
 _Bravo, nous venons d'installer ISPConfig avec succés_
 
-![alt text](image-1.png)
+![alt text](image-23.png)
 
  _ISPConfig admin password is:_ 
-    t5JmG8ewm6DqPUF
+    RseF77L2jBqsJX4
 
  _MySQL root password is:_ 
-    DshWXBXZpxMULVq939qn
+    gAdZ9cPd6S1msKqC3beB
 
 On peut accéder à l'interface web de IPSConfig sur le port 8080 ==> https://parfait-srv-test-1.cyberspector.xyz:8080/
 
@@ -141,7 +141,7 @@ Bind9 tourne bien !!!
 
 - Création d'un Client
 
-    ![Création de client](image-13.png)
+    ![Création de client](image-1.png)
 
 _Password_
 
@@ -150,19 +150,22 @@ _Password_
 
 - Ajout d'un domaine web
 
-![Ajout de doamine](image-14.png)
+![Ajout de doamine](image-13.png)
 
 - Ajout de Zone dns 
 
-![Dns zone](image-20.png)
+![Zone DNS](image-14.png)
+
+![Zone DNS](image-20.png)
+
 
 - Ajout de domaine de mail
 
-![Domain mail](image-21.png)
+![Domain mail](image-24.png)
 
 - Ajout de boite de mail
 
-![Mail Box](image-22.png)
+![Mail Box](image-21.png)
 
     webmaster@cyber-spector.icu
 
